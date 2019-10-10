@@ -1,0 +1,9 @@
+rand seed 111111
+logfile 1.log
+datadir /pubdata/wli/bin/plop25.1/data
+energy params solvent vdgbnp
+load pdb opt_1xqzA.pdb opt no het yes ions yes wat no
+    sidemc res file res.list steric_screen no ofac_min 0.6 rl_frac 0.0 dchi_small 10 large_mcprob 0.25 &
+       mc temp 600 nsteps 15000 ninnersteps 200 output_i yes verbose yes modelfile mc_1xqzA.pdb 1 mcend
+    energy calc
+    write pdb mc_end_1xqzA.pdb
